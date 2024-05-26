@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(layout='wide')
 
@@ -26,3 +27,21 @@ content_container2 = '''
         the course and see if I can move on to Day 22 in the course
     '''
 st.info(content_container2)
+
+col3, empty_col, col4 = st.columns([1.5, 0.5, 1.5])
+df = pd.read_csv('FILES/data.csv', sep=';')
+print(df)
+
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row['title'])
+        st.write(row['description'])
+        st.image('FILES/' + row['image'])
+        st.write(f"[Source Code]({row['url']})")
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.header(row['title'])
+        st.write(row['description'])
+        st.image('FILES/' + row['image'])
+        st.write(f"[Source Code]({row['url']})")
