@@ -23,8 +23,8 @@ with st.container():
         st.info(content)
 
 content_container2 = '''
-        This is some more content to try and see if this works to pass the Day 21 student project section of
-        the course and see if I can move on to Day 22 in the course
+        Here are some of the python projects that I've built or plan to build in the near future.  Contact me
+        for more information by visiting the Contact Me page from the left sidebar
     '''
 st.info(content_container2)
 
